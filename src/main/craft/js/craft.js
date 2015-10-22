@@ -1,3 +1,6 @@
-/**
- * Created by Mac on 10/20/15.
- */
+var craft = angular.module('craft', ['ngRoute']);
+
+craft.controller('mainController', function($scope) {
+    // create a message to display in our view
+    $scope.message = 'Hello World!';
+});
