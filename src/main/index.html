@@ -3,11 +3,37 @@
     <head>
         <title>Craft Demo</title>
         <link rel="stylesheet" href="craft/css/craft.css" />
+        <link rel="stylesheet" href="craft/lib/bootstrap.min.css" />
+    </head>
+    <body ng-controller="mainController">
         <script src="craft/lib/angular.min.js"></script>
         <script src="craft/lib/angular-route.min.js"></script>
         <script src="craft/js/craft.js"></script>
-    </head>
-    <body ng-controller="mainController">
+        <script src="craft/lib/underscore-min.js"></script>
+        <script src="craft/lib/jquery-1.11.3.min.js"></script>
+
         <h1>{{message}}</h1>
+
+        <input type="button" class="btn btn-primary" value="Get Users" ng-click="getUsers()"/>
+
+        <div ng-if="users.length > 0" class="results">
+            <h2>User Details</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users">
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
